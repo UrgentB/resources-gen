@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "2xo0jkaCeWg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alecs\\Yandex.Disk\\Учёба\\ИТМО\\3 семестр\\Сетеые технологии\\BackEnd\\GuildForge.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alecs\\.nuget\\packages\\confluent.kafka\\2.16.0\\confluent.kafka.2.16.0.nupkg.sha512",
+    "C:\\Users\\alecs\\.nuget\\packages\\librdkafka.redist\\2.16.0\\librdkafka.redist.2.16.0.nupkg.sha512"
+  ],
+  "logs": []
+}
