@@ -4,8 +4,8 @@ services:
   worker:
     image: worker
     build:
-      context: .
-      dockerfile: worker/Dockerfile
+      context: ./worker
+      dockerfile: Dockerfile
     ports:
       - 5221:5221
     environment:
@@ -16,8 +16,8 @@ services:
   guildforge:
     image: guildforge
     build:
-      context: .
-      dockerfile: forge/Dockerfile
+        context: ./forge
+        dockerfile: Dockerfile
     ports:
       - 5226:5226
     environment:
