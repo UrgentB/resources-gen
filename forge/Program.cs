@@ -4,7 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var config = new ConsumerConfig
 {
-    BootstrapServers = "localhost:9092",
+    BootstrapServers = builder.Configuration["Kafka:BootstrapServers"],
     GroupId = "test-consumer-group",
     AutoOffsetReset = AutoOffsetReset.Earliest
 };

@@ -1,12 +1,13 @@
 using Microsoft.Extensions.Hosting;
 using Confluent.Kafka;
 
-public class BrokerConsumer(ILogger<BrokerConsumer> logger, ConsumerConfig config) : BackgroundService
+public class BrokerConsumer(ConsumerConfig config, ILogger<BrokerConsumer> logger) : BackgroundService
 {
-    protected override Task ExecuteAsync(CancellationToken stoppingToken)
-    {
+    private ILogger<BrokerConsumer> logger;
+    private IConsumer<string, int> consumer = new ConsumerBuilder<string, int>(config).Build();
 
-        using var consumer = new ConsumerBuilder<string, int>(config).Build();
+    protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+    {
         consumer.Subscribe("test-topic");
 
         while (!stoppingToken.IsCancellationRequested)
@@ -25,7 +26,5 @@ public class BrokerConsumer(ILogger<BrokerConsumer> logger, ConsumerConfig confi
                 consumer.Close();
             }
         }
-
-        return Task.CompletedTask;
     }
 }

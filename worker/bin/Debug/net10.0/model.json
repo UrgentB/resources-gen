@@ -1,0 +1,19 @@
+{
+    "init": 
+    [
+        [30, "resting", 0],
+        [60, "ready to expedition", 1]
+    ],
+    "expedition": 
+    [
+        [50, "explore", 1],
+        [30, "returns", 2],
+        [20, "lost", 0]
+    ],
+    "loot": 
+    [
+        [10, "mefrill"],
+        [50, "iron"],
+        [30, "gold"]
+    ]
+}
