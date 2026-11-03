@@ -3,7 +3,6 @@ using Confluent.Kafka;
 
 public class BrokerConsumer(ConsumerConfig config, ILogger<BrokerConsumer> logger) : BackgroundService
 {
-    private ILogger<BrokerConsumer> logger;
     private IConsumer<string, int> consumer = new ConsumerBuilder<string, int>(config).Build();
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
