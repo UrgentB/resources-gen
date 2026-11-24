@@ -9,7 +9,7 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG configuration=Release
 WORKDIR /src
 COPY ["GuildForge.csproj", "./"]
-RUN dotnet restore "GuildForge.csproj"
+RUN dotnet restore "GuildForge.csproj" --disable-parallel --no-cache
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "GuildForge.csproj" -c $configuration -o /app/build

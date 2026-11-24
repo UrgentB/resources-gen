@@ -14,16 +14,13 @@ public class BrokerConsumer(ConsumerConfig config, ILogger<BrokerConsumer> logge
             try
             {
                 var consumeResult = consumer.Consume(stoppingToken);
-                logger.LogInformation($"Consumed message '{consumeResult.Message.Value}' at: '{consumeResult.TopicPartitionOffset}'.");
+                logger.LogInformation($"Consumed message |Resource: {consumeResult.Message.Key}; Count: {consumeResult.Message.Value}| at: '{consumeResult.TopicPartitionOffset}'.");
             }
             catch (ConsumeException e)
             {
                 logger.LogError($"Error occurred: {e.Error.Reason}");
             }
-            finally
-            {
-                consumer.Close();
-            }
         }
+        consumer.Close();
     }
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GuildForge")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8d0807a5de5472f77032a9449f1bf6d4a98a475")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+82b0f58af11b207a7b447e1adaf64406504590fa")]
 [assembly: System.Reflection.AssemblyProductAttribute("GuildForge")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GuildForge")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

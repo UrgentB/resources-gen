@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 3,
   "targets": {
     "net10.0": {
       "Confluent.Kafka/2.16.0": {
@@ -210,29 +210,29 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alecs\\.nuget\\packages\\": {}
+    "/home/dobrbobr/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\alecs\\Yandex.Disk\\Учёба\\ИТМО\\3 семестр\\Сетеые технологии\\BackEnd\\forge\\GuildForge.csproj",
+      "projectUniqueName": "/home/dobrbobr/Проекты/sage/resources-gen/forge/GuildForge.csproj",
       "projectName": "GuildForge",
-      "projectPath": "c:\\Users\\alecs\\Yandex.Disk\\Учёба\\ИТМО\\3 семестр\\Сетеые технологии\\BackEnd\\forge\\GuildForge.csproj",
-      "packagesPath": "C:\\Users\\alecs\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\alecs\\Yandex.Disk\\Учёба\\ИТМО\\3 семестр\\Сетеые технологии\\BackEnd\\forge\\obj\\",
+      "projectPath": "/home/dobrbobr/Проекты/sage/resources-gen/forge/GuildForge.csproj",
+      "packagesPath": "/home/dobrbobr/.nuget/packages/",
+      "outputPath": "/home/dobrbobr/Проекты/sage/resources-gen/forge/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alecs\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/dobrbobr/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "/usr/lib64/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {}
         }
@@ -247,11 +247,10 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.400"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Confluent.Kafka": {
@@ -278,7 +277,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/10.0.113/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
