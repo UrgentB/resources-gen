@@ -1,9 +1,16 @@
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using Confluent.Kafka;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var modelConfig = JsonSerializer.Deserialize<GenModelConfig>(File.ReadAllText("model.json"));
+var options = new JsonSerializerOptions
+{
+    Converters = { new JsonStringEnumConverter() }
+};
+var modelConfig = JsonSerializer.Deserialize<GenModelConfig>(File.ReadAllText("model.json"), options);
+
+Console.WriteLine(string.Join(" ", modelConfig.InitCases));
 
 var brokerConfig = new ProducerConfig
 {

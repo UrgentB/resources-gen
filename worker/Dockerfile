@@ -9,14 +9,14 @@ FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 ARG configuration=Release
 WORKDIR /src
 COPY ["Worker.csproj", "./"]
-RUN dotnet restore "Worker.csproj"
+RUN dotnet restore "Worker.csproj" --disable-parallel --no-cache
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "Worker.csproj" -c $configuration -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "Worker.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Worker.csproj" -c $configuration -o /app/publish /p:UseAppHost=false 
 
 FROM base AS final
 WORKDIR /app

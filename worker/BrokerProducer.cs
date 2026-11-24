@@ -4,8 +4,10 @@ using Confluent.Kafka;
 public class BrokerProducer(ProducerConfig config, ILogger<BrokerProducer> logger, GenModel model) : BackgroundService
 {
     IProducer<string, int> producer = new ProducerBuilder<string, int>(config).Build();
+
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
+        logger.LogInformation($"Work started. {producer.Name}");
         while (!stoppingToken.IsCancellationRequested)
         {
             var result = model.Tick();
@@ -17,5 +19,6 @@ public class BrokerProducer(ProducerConfig config, ILogger<BrokerProducer> logge
             }
             await Task.Delay(2000, stoppingToken);
         }
+        logger.LogInformation($"Work stoped. {producer.Name}");
     }
 }

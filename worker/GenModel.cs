@@ -19,9 +19,6 @@ public record LootCase(int Chance, string Loot);
 
 public class GenModel(ILogger<GenModel> logger, GenModelConfig config)
 {
-    private record GenCase(int Chance, string Status, ModelState Conclusion);
-    private record LootCase(int Chance, string Loot);
-
     private ModelState state = ModelState.Init;
 
     public (string resource, int count)? Tick()
@@ -57,7 +54,9 @@ public class GenModel(ILogger<GenModel> logger, GenModelConfig config)
                     {
                         logger.LogInformation($"Loot case: {c.Loot} with chance {c.Chance}");
                         return (c.Loot, 1);
+                        state = ModelState.Init;
                     }
+                    
                 }
                 break;
         }
